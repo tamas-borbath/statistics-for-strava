@@ -132,17 +132,17 @@ final readonly class BuildRewindHtmlCommandHandler implements CommandHandler
             }
 
             $rewindItems
-                ->add(RewindItem::from(
-                    icon: 'tools',
-                    title: $this->translator->trans('Gear'),
-                    subTitle: $this->translator->trans('Total hours spent per gear'),
-                    content: $this->twig->render('html/rewind/rewind-chart.html.twig', [
-                        'chart' => Json::encode(MovingTimePerGearChart::create(
-                            movingTimePerGear: $this->queryBus->ask(new FindMovingTimePerGear($yearsToQuery, null))->getMovingTimePerGear(),
-                            gears: $usedGears,
-                        )->build()),
-                    ]),
-                ))
+                #->add(RewindItem::from(
+                #    icon: 'tools',
+                #    title: $this->translator->trans('Gear'),
+                #    subTitle: $this->translator->trans('Total hours spent per gear'),
+                #    content: $this->twig->render('html/rewind/rewind-chart.html.twig', [
+                #        'chart' => Json::encode(MovingTimePerGearChart::create(
+                #            movingTimePerGear: $this->queryBus->ask(new FindMovingTimePerGear($yearsToQuery, null))->getMovingTimePerGear(),
+                #            gears: $usedGears,
+                #        )->build()),
+                #    ]),
+                #))
                 ->add(RewindItem::from(
                     icon: 'trophy',
                     title: $this->translator->trans('Longest activity (h)'),
@@ -166,15 +166,15 @@ final readonly class BuildRewindHtmlCommandHandler implements CommandHandler
                         )->build()),
                     ]),
                 ))
-                ->add(RewindItem::from(
-                    icon: 'thumbs-up',
-                    title: $this->translator->trans('Socials'),
-                    subTitle: $this->translator->trans('Total kudos and comments received'),
-                    content: $this->twig->render('html/rewind/rewind-socials.html.twig', [
-                        'kudoCount' => $socialsMetricsResponse->getKudoCount(),
-                        'commentCount' => $socialsMetricsResponse->getCommentCount(),
-                    ])
-                ))
+                #->add(RewindItem::from(
+                #    icon: 'thumbs-up',
+                #    title: $this->translator->trans('Socials'),
+                #    subTitle: $this->translator->trans('Total kudos and comments received'),
+                #    content: $this->twig->render('html/rewind/rewind-socials.html.twig', [
+                #        'kudoCount' => $socialsMetricsResponse->getKudoCount(),
+                #        'commentCount' => $socialsMetricsResponse->getCommentCount(),
+                #    ])
+                #))
                 ->add(RewindItem::from(
                     icon: 'rocket',
                     title: $this->translator->trans('Distance'),
@@ -262,16 +262,16 @@ final readonly class BuildRewindHtmlCommandHandler implements CommandHandler
                     totalMetric: $totalActivityCountResponse->getTotalActivityCount(),
                     totalMetricLabel: $this->translator->trans('activities'),
                 ))
-                ->add(RewindItem::from(
-                    icon: 'carbon',
-                    title: $this->translator->trans('Carbon saved'),
-                    subTitle: $this->translator->trans('Reduced carbon emission by commuting'),
-                    content: $this->twig->render('html/rewind/rewind-carbon-saved.html.twig', [
-                        'kilogramCarbonSaved' => $this->queryBus->ask(new FindCarbonSaved($yearsToQuery))->getKgCoCarbonSaved(),
-                    ]),
-                    totalMetric: (int) round($this->queryBus->ask(new FindCarbonSaved(Years::all($now)))->getKgCoCarbonSaved()->toFloat()),
-                    totalMetricLabel: 'kg CO₂',
-                ));
+                #->add(RewindItem::from(
+                #    icon: 'carbon',
+                #    title: $this->translator->trans('Carbon saved'),
+                #    subTitle: $this->translator->trans('Reduced carbon emission by commuting'),
+                #    content: $this->twig->render('html/rewind/rewind-carbon-saved.html.twig', [
+                #        'kilogramCarbonSaved' => $this->queryBus->ask(new FindCarbonSaved($yearsToQuery))->getKgCoCarbonSaved(),
+                #    ]),
+                #    totalMetric: (int) round($this->queryBus->ask(new FindCarbonSaved(Years::all($now)))->getKgCoCarbonSaved()->toFloat()),
+                #    totalMetricLabel: 'kg CO₂',
+                #));
 
             if ($activityLocations = $this->queryBus->ask(new FindActivityLocations($yearsToQuery))->getActivityLocations()) {
                 $rewindItems->add(RewindItem::from(
