@@ -78,16 +78,16 @@ This is not a bug, once all your activities have been imported, your gear statis
             'Building activities' => new BuildActivitiesHtml($now),
             'Building gpx files' => new BuildGpxFiles(),
             'Building monthly stats' => new BuildMonthlyStatsHtml($now),
-            'Building gear stats' => new BuildGearStatsHtml($now),
-            'Building gear maintenance' => new BuildGearMaintenanceHtml(),
-            'Building eddington' => new BuildEddingtonHtml($now),
-            'Building segments' => new BuildSegmentsHtml($now),
+           # 'Building gear stats' => new BuildGearStatsHtml($now),
+           # 'Building gear maintenance' => new BuildGearMaintenanceHtml(),
+           # 'Building eddington' => new BuildEddingtonHtml($now),
+           # 'Building segments' => new BuildSegmentsHtml($now),
             'Building heatmap' => new BuildHeatmapHtml($now),
-            'Building best efforts' => new BuildBestEffortsHtml(),
+           # 'Building best efforts' => new BuildBestEffortsHtml(),
             'Building rewind' => new BuildRewindHtml($now),
-            'Building challenges' => new BuildChallengesHtml($now),
+           # 'Building challenges' => new BuildChallengesHtml($now),
             'Building photos' => new BuildPhotosHtml(),
-            'Building badges' => new BuildBadgeSvg($now),
+           # 'Building badges' => new BuildBadgeSvg($now),
         ];
 
         $progressBar = new ProgressBar($output, count($commandsWithMessages));
