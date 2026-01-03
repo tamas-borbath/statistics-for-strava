@@ -12,7 +12,7 @@
 
 @theme {
     --text-xxs: 0.625rem;
-    --color-strava-orange: #F26722;
+    --color-strava-orange: #3AAE5A;
     --color-grey-yo: #cccccc;
 
     --animate-fade-in-chat-message: chat-message 0.15s ease-out 0s forwards;
