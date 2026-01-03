@@ -22,7 +22,7 @@
                                     {% for sportType in sportTypes %}
                                         <li>
                                             <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                <input type="checkbox" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType[{{ sportType.value }}]" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                <input type="checkbox" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType[{{ sportType.value }}]" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                 <label for="{{ sportType.value }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     {{ svgSportType(sportType) }}
                                                     <div>{{ sportType|trans }}</div>
@@ -49,7 +49,7 @@
                                     {% for countryCode,countryName in countries %}
                                         <li>
                                             <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                 <label for="{{ countryCode }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     <img src="{{ relativeUrl('assets/images/flags/' ~ countryCode|lower ~ '.svg') }}" width="15" class="rounded-xs" title="{{ countryName }}" alt="{{ countryName }}">
                                                     <span>{{ countryName }}</span>

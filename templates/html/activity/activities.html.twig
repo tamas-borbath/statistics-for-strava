@@ -38,7 +38,7 @@
                                         {% for sportType in sportTypes %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="checkbox" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType[{{ sportType.value }}]" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="checkbox" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType[{{ sportType.value }}]" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ sportType.value }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         {{ svgSportType(sportType) }}
                                                         <div>{{ sportType|trans }}</div>
@@ -84,7 +84,7 @@
                                         {% for countryCode,countryName in countries %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ countryCode }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         <img src="{{ relativeUrl('assets/images/flags/' ~ countryCode|lower ~ '.svg') }}" width="15" class="rounded-xs" title="{{ countryName }}" alt="{{ countryName }}">
                                                         <span>{{ countryName }}</span>
@@ -111,7 +111,7 @@
                                         {% for gear in gears %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="{{ gear.getId() }}" data-dataTable-filter="gear" name="gear" value="{{ gear.getId() }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="{{ gear.getId() }}" data-dataTable-filter="gear" name="gear" value="{{ gear.getId() }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ gear.getId() }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         <span>{{ gear.getName() }}</span>
                                                     </label>
@@ -121,7 +121,7 @@
                                         {% endfor %}
                                         <li>
                                             <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                <input type="radio" id="gear-none" data-dataTable-filter="gear" name="gear" value="gear-none" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                <input type="radio" id="gear-none" data-dataTable-filter="gear" name="gear" value="gear-none" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                 <label for="gear-none" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     <span>{{ "Unspecified"|trans }}</span>
                                                 </label>
@@ -146,7 +146,7 @@
                                         {% for device in devices %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="{{ device.getId() }}" data-dataTable-filter="device" name="device" value="{{ device.getId() }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="{{ device.getId() }}" data-dataTable-filter="device" name="device" value="{{ device.getId() }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ device.getId() }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         <span>{{ device.getName() }}</span>
                                                     </label>
@@ -156,7 +156,7 @@
                                         {% endfor %}
                                         <li>
                                             <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                <input type="radio" id="device-none" data-dataTable-filter="device" name="device" value="device-none" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                <input type="radio" id="device-none" data-dataTable-filter="device" name="device" value="device-none" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                 <label for="device-none" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     <span>{{ "Unspecified"|trans }}</span>
                                                 </label>
@@ -181,7 +181,7 @@
                                         <ul class="text-sm text-gray-700">
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="true" data-dataTable-filter="isCommute" name="isCommute" value="true" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="true" data-dataTable-filter="isCommute" name="isCommute" value="true" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="true" class="text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         {{ "Commutes only"|trans }}
                                                     </label>
@@ -190,7 +190,7 @@
                                             </li>
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="false" data-dataTable-filter="isCommute" name="isCommute" value="false" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="false" data-dataTable-filter="isCommute" name="isCommute" value="false" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="false" class="text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         {{ "Excludes commutes"|trans }}
                                                     </label>
@@ -205,7 +205,7 @@
                                             {% for workoutType in enum('App\\Domain\\Activity\\WorkoutType').cases() %}
                                                 <li>
                                                     <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                        <input type="radio" id="{{ workoutType.value }}" data-dataTable-filter="workoutType" name="workoutType" value="{{ workoutType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                        <input type="radio" id="{{ workoutType.value }}" data-dataTable-filter="workoutType" name="workoutType" value="{{ workoutType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                         <label for="{{ workoutType.value }}" class="text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                             {{ workoutType|trans }}
                                                         </label>

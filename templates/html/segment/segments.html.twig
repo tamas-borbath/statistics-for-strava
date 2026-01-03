@@ -34,7 +34,7 @@
                                         {% for sportType in sportTypes %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="{{ sportType.value }}" data-dataTable-filter="sportType" name="sportType" value="{{ sportType.value }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ sportType.value }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         {{ svgSportType(sportType) }}
                                                         <div>{{ sportType|trans }}</div>
@@ -61,7 +61,7 @@
                                         {% for countryCode,countryName in countries %}
                                             <li>
                                                 <div class="flex items-center gap-x-2 p-2 rounded-xs hover:bg-gray-100">
-                                                    <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                                    <input type="radio" id="{{ countryCode }}" data-dataTable-filter="countryCode" name="countryCode" value="{{ countryCode }}" class="w-4 h-4 peer text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                                     <label for="{{ countryCode }}" class="flex gap-x-1 items-center text-sm font-medium text-gray-500 cursor-pointer peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                         <img src="{{ relativeUrl('assets/images/flags/' ~ countryCode|lower ~ '.svg') }}" width="15" class="rounded-xs" title="{{ countryName }}" alt="{{ countryName }}">
                                                         <span>{{ countryName }}</span>
@@ -86,7 +86,7 @@
                                 <ul class="max-h-48 overflow-y-auto px-1 py-2 text-sm text-gray-700" aria-labelledby="dropdownOtherButton">
                                     <li>
                                         <div class="flex items-center p-2 rounded-xs hover:bg-gray-100">
-                                            <input type="checkbox" id="isFavourite" data-dataTable-filter="isFavourite" name="isFavourite" value="isFavourite" class="w-4 h-4 text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                            <input type="checkbox" id="isFavourite" data-dataTable-filter="isFavourite" name="isFavourite" value="isFavourite" class="w-4 h-4 text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                             <label for="isFavourite" class="w-full ms-2 text-sm font-medium text-gray-500 cursor-pointer peer-checked:border-strava-orange peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     <span class="flex gap-x-1 items-center">
                                                         {{ svg('star') }}
@@ -98,7 +98,7 @@
                                     </li>
                                     <li>
                                         <div class="flex items-center p-2 rounded-xs hover:bg-gray-100">
-                                            <input type="checkbox" id="isKom" data-dataTable-filter="isKom" name="isKom" value="isKom" class="w-4 h-4 text-strava-orange bg-gray-100 border-gray-300 focus:ring-orange-500 focus:ring-2" />
+                                            <input type="checkbox" id="isKom" data-dataTable-filter="isKom" name="isKom" value="isKom" class="w-4 h-4 text-strava-orange bg-gray-100 border-gray-300 focus:ring-green-500 focus:ring-2" />
                                             <label for="isKom" class="w-full ms-2 text-sm font-medium text-gray-500 cursor-pointer peer-checked:border-strava-orange peer-checked:text-strava-orange hover:text-gray-600 hover:bg-gray-100">
                                                     <span class="flex gap-x-1 items-center">
                                                         {{ svg('elevation', 'h-4 shrink-0 text-strava-orange') }}
