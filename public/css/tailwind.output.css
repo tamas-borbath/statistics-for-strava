@@ -4547,7 +4547,7 @@
     }
     &:hover {
       @media (hover: hover) {
-        --tw-ring-color: var(--color-orange-300);
+        --tw-ring-color: var(--color-green-300);
       }
     }
     &:hover {
@@ -4569,14 +4569,14 @@
     &.active {
       &:hover {
         @media (hover: hover) {
-          border-color: var(--color-orange-600);
+          border-color: var(--color-green-600);
         }
       }
     }
     &.active {
       &:hover {
         @media (hover: hover) {
-          background-color: var(--color-orange-600);
+          background-color: var(--color-green-600);
         }
       }
     }
