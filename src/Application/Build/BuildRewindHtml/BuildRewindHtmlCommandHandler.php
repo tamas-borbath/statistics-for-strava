@@ -271,7 +271,8 @@ final readonly class BuildRewindHtmlCommandHandler implements CommandHandler
                 #    ]),
                 #    totalMetric: (int) round($this->queryBus->ask(new FindCarbonSaved(Years::all($now)))->getKgCoCarbonSaved()->toFloat()),
                 #    totalMetricLabel: 'kg CO₂',
-                #));
+                #))
+                ;
 
             if ($activityLocations = $this->queryBus->ask(new FindActivityLocations($yearsToQuery))->getActivityLocations()) {
                 $rewindItems->add(RewindItem::from(
