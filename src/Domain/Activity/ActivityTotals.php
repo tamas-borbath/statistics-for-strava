@@ -10,8 +10,6 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class ActivityTotals
 {
-    public static ?ActivityTotals $instance = null;
-
     private readonly Kilometer $totalDistance;
     private readonly Meter $totalElevation;
     private readonly int $totalCalories;
@@ -39,15 +37,11 @@ final class ActivityTotals
         SerializableDateTime $now,
         TranslatorInterface $translator): self
     {
-        if (null === self::$instance) {
-            self::$instance = new self(
-                activities: $activities,
-                now: $now,
-                translator: $translator,
-            );
-        }
-
-        return self::$instance;
+        return new self(
+            activities: $activities,
+            now: $now,
+            translator: $translator,
+        );
     }
 
     public function getDistance(): Kilometer

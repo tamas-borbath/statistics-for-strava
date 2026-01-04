@@ -2,22 +2,22 @@
     {% set kbdTagOpen = '<kbd class="px-1 text-xs font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg">' %}
     {% set kdbTagClose = '</kbd>' %}
     <p class="mb-3">
-        {% set numberOfDaysAgo = kbdTagOpen ~ intro.getTotalDaysSinceFirstActivity() ~ kdbTagClose %}
-        {% set startDate = '<span class="text-sm">' ~ intro.getStartDate()|formatDate('normal') ~ '</span>' %}
-        {% set totalDaysOfWorkingOut = kbdTagOpen ~ intro.getTotalDaysOfWorkingOut() ~ kdbTagClose %}
+        {% set numberOfDaysAgo = kbdTagOpen ~ introFull.getTotalDaysSinceFirstActivity() ~ kdbTagClose %}
+        {% set startDate = '<span class="text-sm">' ~ introFull.getStartDate()|formatDate('normal') ~ '</span>' %}
+        {% set totalDaysOfWorkingOut = kbdTagOpen ~ introFull.getTotalDaysOfWorkingOut() ~ kdbTagClose %}
         {% trans with {'{numberOfDaysAgo}': numberOfDaysAgo, '{startDate}': startDate, '{totalDaysOfWorkingOut}': totalDaysOfWorkingOut} %}
             Since I began using Strava {numberOfDaysAgo} ago on {startDate}, I've logged {totalDaysOfWorkingOut} active days of training and adventure.
         {% endtrans %}
     </p>
     <p class="mb-3">
-        {% set convertedIntroDistance = intro.getDistance()|convertMeasurement %}
-        {% set convertedIntroElevation = intro.getElevation()|convertMeasurement %}
+        {% set convertedIntroDistance = introRecent.getDistance()|convertMeasurement %}
+        {% set convertedIntroElevation = introRecent.getElevation()|convertMeasurement %}
         {% set totalDistance = kbdTagOpen ~ convertedIntroDistance.toFloat()|formatNumber(0) ~ ' ' ~ convertedIntroDistance.getSymbol() ~ kdbTagClose %}
-        {% set numberOfTripsAroundTheWorld = kbdTagOpen ~ (intro.getDistance().toFloat() / 40075)|formatNumber(2) ~ kdbTagClose %}
-        {% set numberOfTripsToTheMoonPercent = kbdTagOpen ~ (intro.getDistance().toFloat() / 384400 * 100)|formatNumber(1) ~ kdbTagClose %}
+        {% set numberOfTripsAroundTheWorld = kbdTagOpen ~ (introRecent.getDistance().toFloat() / 40075)|formatNumber(2) ~ kdbTagClose %}
+        {% set numberOfTripsToTheMoonPercent = kbdTagOpen ~ (introRecent.getDistance().toFloat() / 384400 * 100)|formatNumber(1) ~ kdbTagClose %}
         {% set totalElevation = kbdTagOpen ~ convertedIntroElevation.toFloat()|formatNumber(0) ~ ' ' ~ convertedIntroElevation.getSymbol() ~ kdbTagClose %}
-        {% set timesMountEverest = kbdTagOpen ~ (intro.getElevation().toFloat() / 8849)|formatNumber(1) ~ kdbTagClose %}
-        {% set totalTimeRecorded = kbdTagOpen ~ intro.getMovingTimeFormatted() ~ kdbTagClose %}
+        {% set timesMountEverest = kbdTagOpen ~ (introRecent.getElevation().toFloat() / 8849)|formatNumber(1) ~ kdbTagClose %}
+        {% set totalTimeRecorded = kbdTagOpen ~ introRecent.getMovingTimeFormatted() ~ kdbTagClose %}
         {% trans with {
             '{totalDistance}': totalDistance,
             '{numberOfTripsAroundTheWorld}': numberOfTripsAroundTheWorld,
@@ -26,13 +26,13 @@
             '{timesMountEverest}': timesMountEverest,
             '{totalTimeRecorded}': totalTimeRecorded
         } %}
-            In that time, I’ve covered {totalDistance}, that's {numberOfTripsAroundTheWorld} trips around the world 🌍 or {numberOfTripsToTheMoonPercent}% of the way to the moon 🌕, and climbed an elevation of {totalElevation} which is {timesMountEverest} times Mount Everest 🏔. All up that's {totalTimeRecorded} of moving time 🎉.
+            In the past 5 years, I’ve covered {totalDistance}, that's {numberOfTripsAroundTheWorld} trips around the world 🌍 or {numberOfTripsToTheMoonPercent}% of the way to the moon 🌕, and climbed an elevation of {totalElevation} which is {timesMountEverest} times Mount Everest 🏔. All up that's {totalTimeRecorded} of moving time 🎉.
         {% endtrans %}
     </p>
     <p>
-        {% set convertedDailyAverage = intro.getDailyAverage()|convertMeasurement %}
-        {% set convertedWeeklyAverage = intro.getWeeklyAverage()|convertMeasurement %}
-        {% set convertedMonthlyAverage = intro.getMonthlyAverage()|convertMeasurement %}
+        {% set convertedDailyAverage = introRecent.getDailyAverage()|convertMeasurement %}
+        {% set convertedWeeklyAverage = introRecent.getWeeklyAverage()|convertMeasurement %}
+        {% set convertedMonthlyAverage = introRecent.getMonthlyAverage()|convertMeasurement %}
         {% set dailyAverage = kbdTagOpen ~ convertedDailyAverage.toFloat()|formatNumber(0) ~ ' ' ~ convertedDailyAverage.getSymbol() ~ kdbTagClose %}
         {% set weeklyAverage = kbdTagOpen ~ convertedWeeklyAverage.toFloat()|formatNumber(0) ~ ' ' ~ convertedWeeklyAverage.getSymbol() ~ kdbTagClose %}
         {% set monthlyAverage = kbdTagOpen ~ convertedMonthlyAverage.toFloat()|formatNumber(0) ~ ' ' ~ convertedMonthlyAverage.getSymbol() ~ kdbTagClose %}
@@ -41,8 +41,8 @@
         {% endtrans %}
     </p>
     <p>
-        {% set caloriesBurned = kbdTagOpen ~ intro.getCalories()|formatNumber(0) ~ kdbTagClose %}
-        {% set numberOfPizzaSlices = kbdTagOpen ~ (intro.getCalories() / 270)|formatNumber(0) ~ kdbTagClose %}
+        {% set caloriesBurned = kbdTagOpen ~ introRecent.getCalories()|formatNumber(0) ~ kdbTagClose %}
+        {% set numberOfPizzaSlices = kbdTagOpen ~ (introRecent.getCalories() / 270)|formatNumber(0) ~ kdbTagClose %}
         {% trans with {'{caloriesBurned}': caloriesBurned, '{numberOfPizzaSlices}': numberOfPizzaSlices} %}
             Powered by an estimated {caloriesBurned} calories, or roughly {numberOfPizzaSlices} slices of pizza 🍕.
         {% endtrans %}
