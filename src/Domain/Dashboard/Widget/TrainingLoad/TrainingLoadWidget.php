@@ -72,6 +72,13 @@ final readonly class TrainingLoadWidget implements Widget
         );
 
         return $this->twig->load('html/dashboard/widget/widget--training-load.html.twig')->render([
+            'trainingLoadChart' => Json::encode(
+                TrainingLoadChart::create(
+                    trainingMetrics: $trainingMetrics,
+                    now: $now,
+                    translator: $this->translator,
+                )->build()
+            ),
             'timeInHeartRateZonesForLast30Days' => $timeInHeartRateZonesForLast30Days,
             'trainingMetrics' => $trainingMetrics,
             'restDaysInLast7Days' => $numberOfRestDays,
